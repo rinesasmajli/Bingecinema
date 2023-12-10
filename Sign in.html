@@ -29,13 +29,15 @@
     <main>
         <div class="slider">
             <div id="SignIn-BOX">
-                <form action="/action_page.php">
-                    <label for="fname" class="Info" id="Poz1">Username:</label><br>
-                    <input type="text" name="fname" value="" id="Poz2" style="color: white;"><br>
-                    <label for="lname" class="Info" id="Poz3">Password:</label><br>
-                    <input type="text" name="lname" value="" id="Poz4" style="color: white;"><br><br>
-                    <a href="BingeCinema.html"><input type="submit" value="SIGN IN" class="Info" id="Poz5"></a>
-                  </form> 
+                <form id="signinForm" onsubmit="return validateForm()">
+                    <label for="username" class="Info" id="Poz1">Username:</label><br>
+                    <input type="text" name="username" id="Poz2" style="color: white;" required><br>
+            
+                    <label for="password" class="Info" id="Poz3">Password:</label><br>
+                    <input type="password" name="password" id="Poz4" style="color: white;" required><br><br>
+            
+                    <input type="submit" value="SIGN IN" class="Info" id="Poz5">
+                </form>
             </div>
             <div><img src="Logo.PNG" class="Logo"></div>
             <div class="slider-content">
@@ -62,5 +64,23 @@
         <a href="https://twitter.com/home"><img src="TW.png" id="SM"></a>
         <a href="https://www.linkedin.com/"><img src="LK.png" id="SM"></a>
     </footer>
+
+    <script>
+        function validateForm() {
+            var username = document.getElementById('Poz2').value;
+            var password = document.getElementById('Poz4').value;
+
+    
+            if (username.trim() === "" || password.trim() === "") {
+                alert("Username and password cannot be empty");
+                return false; 
+            }
+
+        
+            window.location.href= 'BingeCinema.html';
+
+            return true;
+        }
+    </script>
 </body>
 </html>
