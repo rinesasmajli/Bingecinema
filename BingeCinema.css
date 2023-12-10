@@ -137,3 +137,30 @@ video {
     margin-bottom: 30px;
     margin-left: 50px;
 }
+/*
+Ketu FIllon Kodi per pjesen e faqes qe do te Shfaqe videot
+*/
+.VB{
+    display: flex;
+    border: 2px solid grey;
+    height: 700px;
+    width: 1500px;
+    margin-left: 200px;
+    margin-left: 200px;
+    margin-top: 20px;
+}
+.Titulli{
+    color: rgb(255, 0, 51);
+    margin-left: 250px;
+    margin-top: 20px;
+}
+#DescriptTXT{
+    color: white;
+    font-size: 17px;
+}
+#DescriptBox{
+    width: 1300px;
+    margin-left: 300px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
