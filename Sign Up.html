@@ -29,21 +29,27 @@
     <main>
         <div class="slider">
             <div id="SignIn-BOX" style="height: 500px;">
-                <form action="/action_page.php">
+                <form id="signupForm" onsubmit="return validateForm()" action="/action_page.php">
                     <label for="fname" class="Info" id="Poz6">Name:</label><br>
-                    <input type="text" name="fname" value="" id="Poz7" style="color: white;"><br>
+                    <input type="text" name="fname" id="Poz7" style="color: white;" required><br>
+            
                     <label for="lname" class="Info" id="Poz8">Surname:</label><br>
-                    <input type="text" name="lname" value="" id="Poz9" style="color: white;"><br><br>
-                    <label for="lname" class="Info" id="Poz10">Username:</label><br>
-                    <input type="text" name="lname" value="" id="Poz11" style="color: white;"><br><br>
-                    <label for="fname" class="Info" id="Poz12">Phone Number:</label><br>
-                    <input type="text" name="fname" value="" id="Poz13" style="color: white;"><br>
-                    <label for="lname" class="Info" id="Poz14">Email:</label><br>
-                    <input type="text" name="lname" value="" id="Poz15" style="color: white;"><br><br>
-                    <label for="lname" class="Info" id="Poz16">Password:</label><br>
-                    <input type="text" name="lname" value="" id="Poz17" style="color: white;"><br><br>
+                    <input type="text" name="lname" id="Poz9" style="color: white;" required><br><br>
+            
+                    <label for="username" class="Info" id="Poz10">Username:</label><br>
+                    <input type="text" name="username" id="Poz11" style="color: white;" required><br><br>
+            
+                    <label for="phone" class="Info" id="Poz12">Phone Number:</label><br>
+                    <input type="tel" name="phone" id="Poz13" style="color: white;" required><br>
+            
+                    <label for="email" class="Info" id="Poz14">Email:</label><br>
+                    <input type="email" name="email" id="Poz15" style="color: white;" required><br><br>
+            
+                    <label for="password" class="Info" id="Poz16">Password:</label><br>
+                    <input type="password" name="password" id="Poz17" style="color: white;" required><br><br>
+            
                     <input type="submit" value="SIGN UP" class="Info" id="Poz5">
-                  </form> 
+                </form>
             </div>
             <div><img src="Logo.PNG" class="Logo"></div>
             <div class="slider-content">
@@ -70,5 +76,24 @@
         <a href="https://twitter.com/home"><img src="TW.png" id="SM"></a>
         <a href="https://www.linkedin.com/"><img src="LK.png" id="SM"></a>
     </footer>
+
+    <script>
+        function validateForm() {
+            var requiredFields = ["Poz7", "Poz9", "Poz11", "Poz13", "Poz15", "Poz17"];
+
+            for (var i = 0; i < requiredFields.length; i++) {
+                var fieldValue = document.getElementById(requiredFields[i]).value;
+                if (fieldValue.trim() === "") {
+                    alert("Please fill out all required fields.");
+                    return false;
+                }
+            }
+
+           
+
+            return true;
+        }
+    </script>
+
 </body>
 </html>
